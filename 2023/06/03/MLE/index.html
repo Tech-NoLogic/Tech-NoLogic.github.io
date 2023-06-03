@@ -20,18 +20,20 @@
     var CONFIG = {"hostname":"example.com","root":"/","scheme":"Gemini","version":"7.8.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":false,"show_result":false,"style":null},"back2top":{"enable":true,"sidebar":false,"scrollpercent":false},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":false,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}}};
   </script>
 
-  <meta name="description" content="an interesting site">
-<meta property="og:type" content="website">
-<meta property="og:title" content="TechNoLogic&#39;s World">
-<meta property="og:url" content="http://example.com/archives/index.html">
+  <meta name="description" content="简介 MLE即Maximum Likelihood Estimation，极大似然估计 公式表达为$\theta &#x3D; \mathop{\mathrm{argmax}}\limits_{\theta} \sum_{i&#x3D;1}^{N}log p_{\theta}(x_i)$，其中$\theta$为模型参数，$p_{\theta}(x)$为似然 一般我们会令$L(\theta)&#x3D;\sum_{i&#x3D;1}^{N">
+<meta property="og:type" content="article">
+<meta property="og:title" content="MLE">
+<meta property="og:url" content="http://example.com/2023/06/03/MLE/index.html">
 <meta property="og:site_name" content="TechNoLogic&#39;s World">
-<meta property="og:description" content="an interesting site">
+<meta property="og:description" content="简介 MLE即Maximum Likelihood Estimation，极大似然估计 公式表达为$\theta &#x3D; \mathop{\mathrm{argmax}}\limits_{\theta} \sum_{i&#x3D;1}^{N}log p_{\theta}(x_i)$，其中$\theta$为模型参数，$p_{\theta}(x)$为似然 一般我们会令$L(\theta)&#x3D;\sum_{i&#x3D;1}^{N">
 <meta property="og:locale" content="zh_CN">
+<meta property="article:published_time" content="2023-06-03T11:44:00.944Z">
+<meta property="article:modified_time" content="2023-06-03T13:19:33.157Z">
 <meta property="article:author" content="TechNoLogic">
 <meta property="article:tag" content="tech no logic">
 <meta name="twitter:card" content="summary">
 
-<link rel="canonical" href="http://example.com/archives/">
+<link rel="canonical" href="http://example.com/2023/06/03/MLE/">
 
 
 <script id="page-configurations">
@@ -39,12 +41,12 @@
   CONFIG.page = {
     sidebar: "",
     isHome : false,
-    isPost : false,
+    isPost : true,
     lang   : 'zh-CN'
   };
 </script>
 
-  <title>归档 | TechNoLogic's World</title>
+  <title>MLE | TechNoLogic's World</title>
   
 
 
@@ -143,170 +145,91 @@
         <div class="content-wrap">
           
 
-          <div class="content archive">
+          <div class="content post posts-expand">
             
 
+    
   
   
-  
-  <div class="post-block">
-    <div class="posts-collapse">
-      <div class="collection-title">
-        <span class="collection-header">嗯..! 目前共计 7 篇日志。 继续努力。</span>
-      </div>
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="http://example.com/2023/06/03/MLE/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.jpg">
+      <meta itemprop="name" content="TechNoLogic">
+      <meta itemprop="description" content="an interesting site">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="TechNoLogic's World">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          MLE
+        </h1>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+              
+
+              <time title="创建时间：2023-06-03 19:44:00 / 修改时间：21:19:33" itemprop="dateCreated datePublished" datetime="2023-06-03T19:44:00+08:00">2023-06-03</time>
+            </span>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
 
       
-    <div class="collection-year">
-      <span class="collection-header">2023</span>
+        <h1 id="简介"><a href="#简介" class="headerlink" title="简介"></a>简介</h1><ul>
+<li>MLE即Maximum Likelihood Estimation，极大似然估计</li>
+<li>公式表达为$\theta = \mathop{\mathrm{argmax}}\limits_{\theta} \sum_{i=1}^{N}log p_{\theta}(x_i)$，其中$\theta$为模型参数，$p_{\theta}(x)$为似然</li>
+<li>一般我们会令$L(\theta)=\sum_{i=1}^{N}log p_{\theta}(x_i)$, 并称其为似然函数</li>
+<li>极大的意思是要最大化似然，似然是指似然函数，估计是指要估计模型参数$\theta$</li>
+</ul>
+<h1 id="求解"><a href="#求解" class="headerlink" title="求解"></a>求解</h1><ul>
+<li>如果$p_{\theta}(x)$的表达式知道的话，只要让$\frac{\partial L(\theta)}{\partial \theta} = 0$就行了，也就是当导数为$0$时，函数值极大</li>
+<li>如果$p_{\theta}(x)$的表达式不知道的话，可能要进行一些转换。比如引入隐变量$z$，使$p_{\theta}(x) = \frac{p_{\theta}(x | z) p_{\theta}(z)}{p_{\theta}(z|x)}$，然后再想办法最大化</li>
+</ul>
+<h1 id="一些别的见解"><a href="#一些别的见解" class="headerlink" title="一些别的见解"></a>一些别的见解</h1><ul>
+<li>一般我们理解为什么要最大化似然的时候，都是类似于要使已经确定的随机变量$x$的概率$p(x)$最大，所以要最大化似然函数</li>
+<li>也可以换一种方式理解。MLE的目标是要知道$\theta$，或者说是要知道$p_{\theta}(x)$，我们可以令真实的分布为$p_{data}(x)$，可以证明$\mathop{\mathrm{argmax}}\limits_{\theta} \sum_{i=1}^{N}log p_{\theta}(x_i) \approx \mathop{\mathrm{argmin}}\limits_{\theta} KL(p_{data} || p_{\theta})$。也就是说最大化似然，也就近似的等价于要让我们估计出的$p_{\theta}$和真实的$p_{data}$最相似。这显然是有道理的。</li>
+</ul>
+<h1 id="证明"><a href="#证明" class="headerlink" title="证明"></a>证明</h1><script type="math/tex; mode=display">
+\mathop{\mathrm{argmax}}\limits_{\theta} \sum_{i=1}^{N}log p_{\theta}(x_i) \\ \approx \mathop{\mathrm{argmax}}\limits_{\theta} E_{x \sim p_{data}}[log p_{\theta}(x)] \\ = \mathop{\mathrm{argmax}}\limits_{\theta} E_{x \sim p_{data}}[log p_{\theta}(x)] - E_{x \sim p_{data}}[log p_{data}(x)] \\ = \mathop{\mathrm{argmin}}\limits_{\theta} E_{x \sim p_{data}}[log p_{data}(x)] - E_{x \sim p_{data}}[log p_{\theta}(x)] \\ = \mathop{\mathrm{argmin}}\limits_{\theta} KL(p_{data} || p_{\theta})</script>
     </div>
 
-  <article itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
+    
+    
+    
 
-      <div class="post-meta">
-        <time itemprop="dateCreated"
-              datetime="2023-06-03T19:44:00+08:00"
-              content="2023-06-03">
-          06-03
-        </time>
-      </div>
+      <footer class="post-footer">
 
-      <div class="post-title">
-          <a class="post-title-link" href="/2023/06/03/MLE/" itemprop="url">
-            <span itemprop="name">MLE</span>
-          </a>
-      </div>
-
-    </header>
-  </article>
-
-  <article itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <div class="post-meta">
-        <time itemprop="dateCreated"
-              datetime="2023-06-02T20:17:38+08:00"
-              content="2023-06-02">
-          06-02
-        </time>
-      </div>
-
-      <div class="post-title">
-          <a class="post-title-link" href="/2023/06/02/beamer/" itemprop="url">
-            <span itemprop="name">beamer教程</span>
-          </a>
-      </div>
-
-    </header>
-  </article>
-
-  <article itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <div class="post-meta">
-        <time itemprop="dateCreated"
-              datetime="2023-05-28T12:40:20+08:00"
-              content="2023-05-28">
-          05-28
-        </time>
-      </div>
-
-      <div class="post-title">
-          <a class="post-title-link" href="/2023/05/28/birthday/" itemprop="url">
-            <span itemprop="name">threejs生日礼物</span>
-          </a>
-      </div>
-
-    </header>
-  </article>
-
-  <article itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <div class="post-meta">
-        <time itemprop="dateCreated"
-              datetime="2023-05-28T12:39:01+08:00"
-              content="2023-05-28">
-          05-28
-        </time>
-      </div>
-
-      <div class="post-title">
-          <a class="post-title-link" href="/2023/05/28/icon/" itemprop="url">
-            <span itemprop="name">Hexo侧边栏图标设置</span>
-          </a>
-      </div>
-
-    </header>
-  </article>
-
-  <article itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <div class="post-meta">
-        <time itemprop="dateCreated"
-              datetime="2023-05-27T20:33:35+08:00"
-              content="2023-05-27">
-          05-27
-        </time>
-      </div>
-
-      <div class="post-title">
-          <a class="post-title-link" href="/2023/05/27/wsl/" itemprop="url">
-            <span itemprop="name">WSL2使用教程</span>
-          </a>
-      </div>
-
-    </header>
-  </article>
-
-  <article itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <div class="post-meta">
-        <time itemprop="dateCreated"
-              datetime="2023-04-18T22:20:25+08:00"
-              content="2023-04-18">
-          04-18
-        </time>
-      </div>
-
-      <div class="post-title">
-          <a class="post-title-link" href="/2023/04/18/tensorrt/" itemprop="url">
-            <span itemprop="name">TensorRT使用记录</span>
-          </a>
-      </div>
-
-    </header>
-  </article>
-
-  <article itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <div class="post-meta">
-        <time itemprop="dateCreated"
-              datetime="2023-04-17T20:56:53+08:00"
-              content="2023-04-17">
-          04-17
-        </time>
-      </div>
-
-      <div class="post-title">
-          <a class="post-title-link" href="/2023/04/17/hello-world/" itemprop="url">
-            <span itemprop="name">Hello World</span>
-          </a>
-      </div>
-
-    </header>
-  </article>
+        
 
 
+        
+    <div class="post-nav">
+      <div class="post-nav-item">
+    <a href="/2023/06/02/beamer/" rel="prev" title="beamer教程">
+      <i class="fa fa-chevron-left"></i> beamer教程
+    </a></div>
+      <div class="post-nav-item"></div>
     </div>
-  </div>
+      </footer>
+    
+  </article>
   
   
-  
-
   
 
 
@@ -359,6 +282,7 @@
 
       <!--noindex-->
       <div class="post-toc-wrap sidebar-panel">
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#%E7%AE%80%E4%BB%8B"><span class="nav-number">1.</span> <span class="nav-text">简介</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E6%B1%82%E8%A7%A3"><span class="nav-number">2.</span> <span class="nav-text">求解</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E4%B8%80%E4%BA%9B%E5%88%AB%E7%9A%84%E8%A7%81%E8%A7%A3"><span class="nav-number">3.</span> <span class="nav-text">一些别的见解</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E8%AF%81%E6%98%8E"><span class="nav-number">4.</span> <span class="nav-text">证明</span></a></li></ol></div>
       </div>
       <!--/noindex-->
 
@@ -467,6 +391,61 @@
   
 
   
+      
+
+<script>
+  if (typeof MathJax === 'undefined') {
+    window.MathJax = {
+      loader: {
+          load: ['[tex]/mhchem'],
+        source: {
+          '[tex]/amsCd': '[tex]/amscd',
+          '[tex]/AMScd': '[tex]/amscd'
+        }
+      },
+      tex: {
+        inlineMath: {'[+]': [['$', '$']]},
+          packages: {'[+]': ['mhchem']},
+        tags: 'ams'
+      },
+      options: {
+        renderActions: {
+          findScript: [10, doc => {
+            document.querySelectorAll('script[type^="math/tex"]').forEach(node => {
+              const display = !!node.type.match(/; *mode=display/);
+              const math = new doc.options.MathItem(node.textContent, doc.inputJax[0], display);
+              const text = document.createTextNode('');
+              node.parentNode.replaceChild(text, node);
+              math.start = {node: text, delim: '', n: 0};
+              math.end = {node: text, delim: '', n: 0};
+              doc.math.push(math);
+            });
+          }, '', false],
+          insertedScript: [200, () => {
+            document.querySelectorAll('mjx-container').forEach(node => {
+              let target = node.parentNode;
+              if (target.nodeName.toLowerCase() === 'li') {
+                target.parentNode.classList.add('has-jax');
+              }
+            });
+          }, '', false]
+        }
+      }
+    };
+    (function () {
+      var script = document.createElement('script');
+      script.src = '//cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js';
+      script.defer = true;
+      document.head.appendChild(script);
+    })();
+  } else {
+    MathJax.startup.document.state(0);
+    MathJax.texReset();
+    MathJax.typeset();
+  }
+</script>
+
+    
 
   
 
